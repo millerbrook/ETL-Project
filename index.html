@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>ETL Project</title>
+
+    <!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+    <div class="header green-small">
+        <br /><br />
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light green-small">
+        <a class="navbar-brand reverse" href="index.html">Vaccine Distribution by Vaccine vs. State Population</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Plots
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="pfizer.html">Pfizer</a>
+                        <a class="dropdown-item" href="moderna.html">Moderna</a>
+                        <a class="dropdown-item" href="janssen.html">Janssen</a>
+                    </div>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="projectreport.html">Project Report <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="data.html">Data</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class = "jumbotron">
+        <h1>Project Description</h1>
+        <h3>Christina Gangi, JJ Williams, and Brook Miller ETL project</h3>
+<p>
+            In this project we will examine Covid vaccine distribution data by state in relation to state population.
+            
+            We will pull data on three Covid vaccines (Pfizer, Moderna, Janssen) from the CDC website API (https://data.cdc.gov/browse?q=covid%20vaccines&sortBy=relevance), as well as state population estimates data from Census.gov's developers' API (https://www.census.gov/data/developers/data-sets/popest-popproj/popest.html).
+        </p>
+           <p> We will consolidate the three vaccine allocation datasets into one allocations table. The allocations table will combine the information from the three datasets from the CDC vaccines API, including jurisdiction(state), week of allocations, first dose allocation, and second dose allocation.
+            
+            We will have one states table to bring in state-specific information (from the Census).</p>
+            
+            <p>A vaccines table will include information on each vaccine, including columns for the vaccine, the id, the number of doses, eligibility ages (for vaccines, not states) and dates between doses.
+            
+            These tables could be joined to produce analyses based on population per state vs. the number of vaccinated individuals.</p>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
+
+</html>
