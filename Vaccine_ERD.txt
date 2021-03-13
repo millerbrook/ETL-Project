@@ -1,0 +1,23 @@
+state
+-----
+id INT PK
+state TEXT
+population INT
+population_date DATE
+
+vaccine
+-----
+id INT PK
+vaccine TEXT
+req_doses INT
+days_between INT
+min_age INT
+
+allocation
+-----
+id INT PK
+week DATE
+dose1 INT
+dose2 INT
+state_id INT FK >- state.id
+vaccine_id INT FK >- vaccine.id
