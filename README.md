@@ -3,7 +3,7 @@ Christina Gangi, JJ Williams, and Brook Miller ETL project
 
 In this project we will examine Covid vaccine distribution data by state in relation to state population.
 
-We will pull data on three Covid vaccines (Pfizer, Moderna, Janssen) from the CDC website API, as well as state population estimates data from Census.gov's developers' API.
+We will pull data on three Covid vaccines (Pfizer, Moderna, Janssen) from the CDC website API (https://data.cdc.gov/browse?q=covid%20vaccines&sortBy=relevance), as well as state population estimates data from Census.gov's developers' API (https://www.census.gov/data/developers/data-sets/popest-popproj/popest.html).
 
 We will consolidate the three vaccine allocation datasets into one allocations table. The allocations table will combine the information from the three datasets from the CDC vaccines API, including jurisdiction(state), week of allocations, first dose allocation, and second dose allocation.
 
