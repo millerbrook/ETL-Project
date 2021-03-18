@@ -59,7 +59,7 @@
         <h3>Transform:</h3>
         <p>We created Pandas DataFrames to hold information about the individual vaccines and about state populations. Next, we created three Pandas DataFrames, each devoted to one of the vaccines. Then, we concatenated these three dataframes into a single dataframe called 'allocation_df'. We reset the index, renamed columns for consistency, and dropped unnecessary columns. In addition, we joined our 'allocation_df' with the state and vaccine dfs and renamed the columns to match the plan in our ERD for our postgres db</p>
         <h3>Load:</h3>
-        <p>We wrote a brief SQL script to set up the tables in postgres according to our ERD. We loaded the dataframe data into the postgres tables.</p>
+        <p>We wrote a brief SQL script to set up the tables in postgres according to our ERD. We loaded the dataframe data into the postgres tables. Then, we queried postgres from our jupyter notebook to retrieve the data from the tables.</p>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
