@@ -15,7 +15,7 @@ min_age INT
 
 allocation
 -----
-id INT PK
+id SERIAL PK
 week DATE
 dose1 INT
 dose2 INT
