@@ -15,10 +15,7 @@
 </head>
 
 <body>
-    <div class="header green-small">
-        <br /><br />
-    </div>
-    <nav class="navbar navbar-expand-lg navbar-light green-small">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand reverse" href="index.html">Vaccine Distribution by Vaccine vs. State Population</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -50,6 +47,31 @@
             </ul>
         </div>
     </nav>
+    <div class="row mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-states" role="tab" aria-controls="v-pills-states" aria-selected="true">All States</a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-florida" role="tab" aria-controls="v-pills-florida" aria-selected="false">Florida </a>
+                    </div>
+                </div>
+                <div class="col-md-10">
+                    <div class="tab-content" id="v-pills-tabContent">
+                        <div class="tab-pane fade show active" id="v-pills-states" role="tabpanel" aria-labelledby="v-pills-states-tab">
+                            <img src="state_allocations.png" alt="State Vaccine Allocation" width="100%">
+                        </div>
+                        <div class="tab-pane fade" id="v-pills-florida" role="tabpanel" aria-labelledby="v-pills-florida-tab">
+
+                        </div>
+                    
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+    </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
