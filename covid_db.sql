@@ -20,7 +20,7 @@ CREATE TABLE vaccine
 	);
 	
 CREATE TABLE allocation
-	(id INT PRIMARY KEY
+	(id SERIAL PRIMARY KEY
 	,week DATE
 	,dose1 INT
 	,dose2 INT
