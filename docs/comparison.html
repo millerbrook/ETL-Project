@@ -24,24 +24,6 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
-                <!--Commenting out dropdown 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Plots
-                    </a>
-                    
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="pfizer.html">Pfizer</a>
-                        <a class="dropdown-item" href="moderna.html">Moderna</a>
-                        <a class="dropdown-item" href="janssen.html">Janssen</a>
-                    </div>
-                  
-                </li>
-                  -->
-                <li class="nav-item active">
-                    <a class="nav-link" href="projectreport.html">Project Report <span class="sr-only">(current)</span></a>
-                </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="comparison.html">Comparison <span class="sr-only">(current)</span></a>
                 </li>
@@ -56,27 +38,37 @@
             <div class="row">
                 <div class="col-md-3">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-states" role="tab" aria-controls="v-pills-states" aria-selected="true">All States</a>
-                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-florida" role="tab" aria-controls="v-pills-florida" aria-selected="false">Florida </a>
-                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-vaccines" role="tab" aria-controls="v-pills-vaccines" aria-selected="false">Vaccines </a>
+                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-state_total" role="tab" aria-controls="v-pills-state_total" aria-selected="true">State Total vaccines</a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-state_per" role="tab" aria-controls="v-pills-state_per" aria-selected="false">State % of Population </a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-florida" role="tab" aria-controls="v-pills-florida" aria-selected="false">Florida % of Population </a>
+                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-vaccines" role="tab" aria-controls="v-pills-vaccines" aria-selected="false">Vaccine % of Allocation </a>
                     </div>
                 </div>
                 <div class="col-md-9">
                     <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-states" role="tabpanel" aria-labelledby="v-pills-states-tab">
-                            <img src="state_allocations.png" alt="State Vaccine Allocation" width="100%">
+                        <div class="tab-pane fade show active" id="v-pills-state_total" role="tabpanel" aria-labelledby="v-pills-state_total-tab">
+                            <img src="../Images/state_allocations_count.png" alt="State Vaccine Allocation" width="100%">
+                            <br>
+                            <p>In this data (for 3/22/21), this chart can be misleading due to specific states significantly higher than the rest.  
+                                This is why the state percentage of population better represents the equitable distribution of vaccines across states.</p>
+                        </div>
+                        <div class="tab-pane fade show" id="v-pills-state_per" role="tabpanel" aria-labelledby="v-pills-state_per-tab">
+                            <img src="../Images/state_allocations.png" alt="State Vaccine Allocation" width="100%">
                             <br>
                             <p>In this data (for 3/22/21), Alaska stands out for its relatively high % of allocations relative to population. New York is relatively low.</p>
                         </div>
                         <div class="tab-pane fade" id="v-pills-florida" role="tabpanel" aria-labelledby="v-pills-florida-tab">
-                            <img src="Allo_pie.png" alt="Florida Allocation Pie Chart" width="75%">
+                            <img src="../Images/Allo_pie.png" alt="Florida Allocation Pie Chart" width="75%">
                             <br>
                             <p>March 22, 2021 total vaccine allocations in Florida would vaccinate slightly more than 1/4 of state population.</p>
                         </div>
                         <div class="tab-pane fade" id="v-pills-vaccines" role="tabpanel" aria-labelledby="v-pills-vaccines-tab">
-                            <img src="vaccine_allocations.png" alt="Vaccine Allocation Pie Chart" width="75%">
+                            <img src="../Images/vaccine_allocations.png" alt="Vaccine Allocation Pie Chart" width="75%">
                             <br>
-                            <p>Moderna and Pfizer vaccines dominate current allocations and are approximately equal. The Janssen vaccine, because of its easier storage and single dose regime, as well as Merck corporation's agreement to begin manufacturing it, will likely increase in total allocation share in coming weeks.</p>
+                            <p>Moderna and Pfizer vaccines dominate current allocations and are approximately equal. 
+                                The Janssen vaccine, because of its easier storage and single dose regime, as well as 
+                                Merck corporation's agreement to begin manufacturing it, will likely increase in total 
+                                allocation share in coming weeks.</p>
                         </div>
                     </div>
                 </div>
