@@ -14,8 +14,8 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand reverse" href="index.html">Vaccine Distribution by Vaccine vs. State Population</a>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand reverse" href="index.html">Covid Vaccine Allocations by State</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,6 +23,7 @@
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
             <ul class="navbar-nav">
+                <!--Commenting out dropdown with unused pages
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,6 +35,7 @@
                         <a class="dropdown-item" href="janssen.html">Janssen</a>
                     </div>
                 </li>
+                -->
                 <li class="nav-item active">
                     <a class="nav-link" href="projectreport.html">Project Report <span class="sr-only">(current)</span></a>
                 </li>
@@ -47,58 +49,71 @@
         </div>
     </nav>
     <div class="container mt-3">
-        <h1>Project Report</h1>
+        <h2>Project Report</h2>
         <hr>
-        <h3>Initial Planning:</h3>
+        <h4>Initial Planning:</h4>
         <p>After examining data available through the CDC and Census.gov, we decided to focus upon allocations of the
             Covid 19 vaccines by state. We wrote a project proposal, created an ERD for the database, set up a GitHub
             repository, and created a Bootstrap-based HTML framework for displaying the data. We planned to clean,
             join, and filter the data in a relational database in order to produce an effective representation of Covid
             19
-            allocations by state. The tables we produced included a hard coded vaccine information table, a state
-            population table based on census data, and an allocation table based on CDC data.</p>
+            allocations by state. The tables we produced included a hard-coded vaccine information table, a state
+            population table based on census data, and an allocation table based on CDC data (see the ERD, below).</p>
         <p>
-            These tables could be joined to produce analyses based on population per state vs. the number of vaccinated
+            These tables were ultimately joined to produce analyses based on population per state vs. the number of
+            vaccinated
             individuals.</p>
-
-        <h3>Extract:</h3>
-        <p>We began by making API calls to <a href="https://www.census.gov/data/developers/data-sets/popest-popproj/popest.html" target="_blank">CDC</a>
-            and <a href="https://data.cdc.gov/browse?q=COVID%20vaccine&sortBy=relevance" target="_blank">Census.gov</a> to extract the appropriate information. We
-            were able to pull from the CDC state-specific allocation data for the Pfizer, Moderna, and Janssen vaccines
-            based on
-            each week. We were able to pull from the Census population estimates for each state for the last 10 years.
+<hr>
+        <h4>Extract:</h4>
+        <p>We began by making API calls to <a
+                href="https://www.census.gov/data/developers/data-sets/popest-popproj/popest.html"
+                target="_blank">CDC</a>
+            and <a href="https://data.cdc.gov/browse?q=COVID%20vaccine&sortBy=relevance" target="_blank">Census.gov</a>
+            to extract the appropriate information. From the CDC, we
+            pulled state-specific weekly allocation data for the Pfizer, Moderna, and Janssen vaccines. From the census,
+            we pulled population estimates for each state for the last 10 years.
         </p>
-        <h3>Transform:</h3>
-        <p>We created pandas dataframes to hold information about the individual vaccines and about state populations.
-            Next, we created three dataFrames, each devoted to one of the vaccines. We created a dataframe giving
+        <hr>
+        <h4>Transform:</h4>
+        <p>We created several pandas dataframes to hold and analyze information. From our API calls to the CDC website,
+            we created three dataframes, each devoted to storing CDC allocation data for one of the vaccines. We created
+            a dataframe giving
             essential information about each vaccine, including required doses, days between doses, and minimum age. We
             also created a dataframe with state population data, which required filtering the dataframe to include only
-            the most recent date (July 1, 2019). We also extracted the substring that contained the date. Then, we
-            concatenated these
-            three dataframes into a single dataframe called 'allocation_df'. We reset the index, renamed columns for
+            the most recent date (July 1, 2019). We extracted the substring that contained the date in order to isolate
+            the most recent data. 
+        </p> 
+        <p>
+            After creating these initial dataframes, we
+            concatenated the
+            three dataframes with CDC information on specific vaccine allocations into a single dataframe called 'allocation_df'. We reset the index, renamed columns for
             consistency, and dropped unnecessary columns. In addition, we joined our 'allocation_df' with the state and
             vaccine dfs and renamed the columns to match the plan in our ERD for our postgres db.</p>
-        <h3>Load:</h3>
-        <p>We wrote a brief SQL script to set up the tables in postgres according to our ERD. We loaded the dataframe
+        </p>
+        <hr>
+            <h4>Load:</h4>
+        <p>We wrote an SQL script to set up the tables in postgres according to our ERD. We loaded the dataframe
             data into the postgres tables using SQLAlchemy. Then, we queried postgres from our jupyter notebook to
             retrieve the data from
             the tables. We chose to design a relational database in third normal form because it allows us to easily
             keep the vaccine and state
             information separate from the allocation table for easy updates and because all rows in each table have a
             consistent structure.</p>
+            <hr>
         <h4>Database Design:</h4>
+        <br>
         <img class="img-fluid" style="padding-left: 100px; border-radius: 2%;" src="Vaccine_ERD.png"
             alt="ERD for project database">
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
 
 </body>
 
